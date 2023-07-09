@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+#start {
+    text-align: center;
+}
+
+#url_input {
+    text-align: center;
+    width: 350px;
+}
+
+.control_button {
+    border-radius: 50%;
+    height: 50px;
+    margin-top: 5px;
+    width: 50px;
+}
+
+.glyphicon {
+    font-size: 20px;
+}
