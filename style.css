@@ -19,3 +19,7 @@
 .glyphicon {
     font-size: 20px;
 }
+
+#stage{
+    display: none;
+}
