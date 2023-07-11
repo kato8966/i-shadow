@@ -28,7 +28,7 @@
     display: none;
 }
 
-#dictation {
+.dictation {
     font-size: 40px;
     margin: 0 10px;
 }
