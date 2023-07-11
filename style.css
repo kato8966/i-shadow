@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-#start {
+#instruction {
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -25,4 +26,9 @@
 
 #stage {
     display: none;
+}
+
+#dictation {
+    font-size: 40px;
+    margin: 0 10px;
 }
