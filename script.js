@@ -3,8 +3,6 @@ let is_player_ready
 
 function onYouTubeIframeAPIReady(){
     player = new YT.Player("player", {
-        height: $(document).height() * 2 / 3,
-        width: $(document).width(),
         events: {
             "onReady": onPlayerReady
         }
@@ -20,6 +18,8 @@ function playYouTubeVideo(){
     if (input.reportValidity() && is_player_ready){
         document.getElementById("start").style.display = "none"
         document.getElementById("stage").style.display = "block"
+        player.setSize($(document).width(),
+                       $(document).height() - $("#stop_button").outerHeight(true) - lineHeight(document.getElementsByClassName("dictation")[0]) * 2)
         const video_url = input.value
         const video_id = video_url.substring(video_url.length - 11)
         player.loadVideoById(video_id)
