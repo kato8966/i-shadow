@@ -1,14 +1,14 @@
-var player;
+let player
 let is_player_ready
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
+function onYouTubeIframeAPIReady(){
+    player = new YT.Player("player", {
         height: $(document).height() * 2 / 3,
         width: $(document).width(),
         events: {
             "onReady": onPlayerReady
         }
-    });
+    })
 }
 
 function onPlayerReady(){
