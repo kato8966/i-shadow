@@ -5,14 +5,17 @@
 }
 
 #url_input {
+    display: block;
+    margin: 0 auto;
     text-align: center;
     width: 350px;
 }
 
 .control_button {
     border-radius: 50%;
+    display: block;
     height: 50px;
-    margin-top: 5px;
+    margin: 5px auto 0px;
     width: 50px;
 }
 
