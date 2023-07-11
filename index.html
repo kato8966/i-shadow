@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="start">
-            <p>Paste a URL of a YouTube video below (e.g., https://www.youtube.com/watch?v=??????????? or https://youtu.be/???????????).</p>
+            <p id="instruction">Paste a URL of a YouTube video below (e.g., https://www.youtube.com/watch?v=??????????? or https://youtu.be/???????????).</p>
             <input type="url" id="url_input" pattern="https:\/\/(www\.youtube\.com\/watch\?v=|youtu\.be\/)[\w\-]{11}">
             <button id="start_button" class="control_button" aria-label="Start shadowing">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
@@ -25,6 +25,8 @@
             <button id="stop_button" class="control_button" aria-label="Stop shadowing">
                 <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
             </button>
+            <p id="dictation">
+            </p>
         </div>
     </body>
 </html>
