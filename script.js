@@ -1,7 +1,7 @@
 let player
 let is_player_ready
 const dictation_all = []
-const dictation_lines = document.getElementsByClassName("dictation")
+const dictation_lines = document.getElementsByClassName("dictation"), dictation_lines_content = [[], []]
 
 function onYouTubeIframeAPIReady(){
     player = new YT.Player("player", {
