@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+h2 {
+    margin: 10px;
+}
+
 #instruction {
     margin-top: 5px;
     text-align: center;
@@ -22,6 +26,10 @@
 
 .glyphicon {
     font-size: 20px;
+}
+
+#notice {
+    margin: 10px;
 }
 
 #stage {

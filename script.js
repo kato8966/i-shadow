@@ -39,3 +39,7 @@ function startShadowing(){
 }
 
 document.getElementById("start_button").addEventListener("click", startShadowing)
+
+fetch("NOTICE.txt")
+    .then(response => response.text())
+    .then(text => document.getElementById("notice").textContent = text)
