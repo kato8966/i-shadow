@@ -1,5 +1,6 @@
 let player
 let is_player_ready
+const dictation_all = []
 
 function onYouTubeIframeAPIReady(){
     player = new YT.Player("player", {
