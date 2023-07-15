@@ -43,7 +43,7 @@ function startShadowing(){
         return
     }
     if (playYouTubeVideo()){
-
+        audio_source.connect(recognizerProcessor)
     }
 }
 
