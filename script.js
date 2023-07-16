@@ -2,8 +2,10 @@ let player
 let is_player_ready
 let is_vosk_ready
 const dictation_all = []
-const dictation_lines = document.getElementsByClassName("dictation"), dictation_lines_content = [[], []]
+const dictation_lines = document.getElementsByClassName("dictation")
+let dictation_lines_content = [[], []], current_dictation_line = 0
 let recognizerProcessor
+let last_partial_result = ""
 let audio_source
 
 function onYouTubeIframeAPIReady(){
@@ -53,6 +55,52 @@ fetch("NOTICE.txt")
     .then(response => response.text())
     .then(text => document.getElementById("notice").textContent = text)
 
+const canvas_context = document.createElement("canvas").getContext("2d")
+canvas_context.font = window.getComputedStyle(dictation_lines[0]).getPropertyValue("font")
+
+function line_length(line){
+    let text = ""
+    for (const span of line){
+        if (text != ""){
+            text += " "
+        }
+        text += span.textContent
+    }
+    return canvas_context.measureText(text).width
+}
+
+function vosk_result_ready(text, is_final){
+    const words = text.split(" ")
+    const temp_dictation_lines = _.cloneDeep(dictation_lines_content)
+    for (const word of words){
+        const span = document.createElement("span")
+        span.textContent = word
+        temp_dictation_lines[current_dictation_line].push(span)
+        if (line_length(temp_dictation_lines[current_dictation_line]) > dictation_lines[current_dictation_line].clientWidth){
+            temp_dictation_lines[current_dictation_line].pop()
+            if (current_dictation_line == 0){
+                current_dictation_line++
+                temp_dictation_lines[current_dictation_line].push(span)
+            }else{
+                temp_dictation_lines[0] = temp_dictation_lines[1]
+                temp_dictation_lines[1] = [span]
+            }
+        }
+    }
+    for (let line = 0; line < 2; line++){
+        dictation_lines[line].textContent = ""
+        for (const span of temp_dictation_lines[line]){
+            if (dictation_lines[line].textContent != ""){
+                dictation_lines[line].insertAdjacentText("beforeend", " ")
+            }
+            dictation_lines[line].appendChild(span)
+        }
+    }
+    if (is_final){
+        dictation_lines_content = temp_dictation_lines
+    }
+}
+
 async function init_vosk(){
     /*
        Copyright 2020-2022 Ciaran O'Reilly
@@ -82,7 +130,11 @@ async function init_vosk(){
         vosk_result_ready(message.result.text, true)
     })
     recognizer.on("partialresult", (message) => {
-        vosk_result_ready(message.result.partial, false)
+        const text = message.result.partial
+        if (text != last_partial_result){
+            last_partial_result = text
+            vosk_result_ready(text, false)
+        }
     })
 
     const mediaStream = await navigator.mediaDevices.getUserMedia({
