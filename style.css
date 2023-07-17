@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-h2 {
+#open_source {
     margin: 10px;
 }
 
@@ -26,6 +26,10 @@ h2 {
 
 .glyphicon {
     font-size: 20px;
+}
+
+#terms {
+    text-align: center;
 }
 
 #notice {

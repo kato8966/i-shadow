@@ -20,10 +20,18 @@
         <div id="start">
             <p id="instruction">Paste a URL of a YouTube video below (e.g., https://www.youtube.com/watch?v=??????????? or https://youtu.be/???????????).</p>
             <input type="url" id="url_input" pattern="https:\/\/(www\.youtube\.com\/watch\?v=|youtu\.be\/)[\w\-]{11}">
+            <div id="terms">
+                <h2>
+                    Terms of Use
+                </h2>
+                <p>
+                    By using this site, you are agreeing to be bound by <a href="https://www.youtube.com/t/terms">the YouTube Terms of Service</a>.
+                </p>
+            </div>
             <button id="start_button" class="control_button" aria-label="Start shadowing">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
             </button>
-            <h2>Open Source Licenses</h2>
+            <h2 id="open_source">Open Source Licenses</h2>
             <pre id="notice"></pre>
         </div>
         <div id="stage">
