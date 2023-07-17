@@ -1,6 +1,10 @@
 @charset "utf-8";
 
-#open_source {
+h2 {
+    margin: 10px;
+}
+
+h3 {
     margin: 10px;
 }
 
@@ -30,6 +34,10 @@
 
 #terms {
     text-align: center;
+}
+
+#privacy_policy_state {
+    margin: 10px;
 }
 
 #notice {
