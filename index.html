@@ -18,21 +18,22 @@
     </head>
     <body>
         <div id="start">
-            <p id="instruction">Paste a URL of a YouTube video below (e.g., https://www.youtube.com/watch?v=??????????? or https://youtu.be/???????????).</p>
+            <p>Paste a URL of a YouTube video below (e.g., https://www.youtube.com/watch?v=??????????? or https://youtu.be/???????????).</p>
             <input type="url" id="url_input" pattern="https:\/\/(www\.youtube\.com\/watch\?v=|youtu\.be\/)[\w\-]{11}">
-            <div id="terms">
-                <h2>
-                    Terms of Use
-                </h2>
-                <p>
-                    By using this site, you are agreeing to be bound by <a href="https://www.youtube.com/t/terms">the YouTube Terms of Service</a>.
-                </p>
-            </div>
+            <p>
+                <a href="#terms">Terms of Use</a>&emsp;<a href="#privacy_policy">Privacy Policy</a>
+            </p>
             <button id="start_button" class="control_button" aria-label="Start shadowing">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
             </button>
-            <h2>Privacy Policy</h2>
-            <p id="privacy_policy_state">
+        </div>
+        <div id="legal">
+            <h2 id="terms">Terms of Use</h2>
+            <p>
+                By using this site, you are agreeing to be bound by <a href="https://www.youtube.com/t/terms">the YouTube Terms of Service</a>.
+            </p>
+            <h2 id="privacy_policy">Privacy Policy</h2>
+            <p>
                 This site
                 <ul>
                     <li>

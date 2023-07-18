@@ -30,6 +30,7 @@ function playYouTubeVideo(){
         return false
     }
     document.getElementById("start").style.display = "none"
+    document.getElementById("legal").style.display = "none"
     document.getElementById("stage").style.display = "block"
     player.setSize($(document).width(),
                    $(document).height() - $("#stop_button").outerHeight(true) - lineHeight(dictation_lines[0]) * 2)

@@ -1,22 +1,13 @@
 @charset "utf-8";
 
-h2 {
-    margin: 10px;
-}
-
-h3 {
-    margin: 10px;
-}
-
-#instruction {
-    margin-top: 5px;
+#start p,input,button {
+    margin: 5px;
     text-align: center;
 }
 
 #url_input {
     display: block;
-    margin: 0 auto;
-    text-align: center;
+    margin: 5px auto;
     width: 350px;
 }
 
@@ -24,7 +15,7 @@ h3 {
     border-radius: 50%;
     display: block;
     height: 50px;
-    margin: 5px auto 0px;
+    margin: 5px auto 5px;
     width: 50px;
 }
 
@@ -32,15 +23,7 @@ h3 {
     font-size: 20px;
 }
 
-#terms {
-    text-align: center;
-}
-
-#privacy_policy_state {
-    margin: 10px;
-}
-
-#notice {
+#legal {
     margin: 10px;
 }
 
